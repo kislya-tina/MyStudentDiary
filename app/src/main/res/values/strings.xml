@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">My student diary</string>
+    <string name="syllabus_test_text">Hello syllabus fragment</string>
+    <string name="statistic_test_text">Hello statistic fragment</string>
+    <string name="main_test_text">Hello main fragment</string>
+    <string name="stat">stat</string>
+    <string name="main">main</string>
+    <string name="syll">syll</string>
+</resources>
