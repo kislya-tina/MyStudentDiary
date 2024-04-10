@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_statistic">
+
+    <fragment
+        android:id="@+id/navigation_statistic"
+        android:name="mystudent.diary.view.main.ui.statistic.HomeFragment"
+        android:label="@string/title_statistic"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="mystudent.diary.view.main.ui.home.DashboardFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_dashboard" />
+
+    <fragment
+        android:id="@+id/navigation_syllabus"
+        android:name="mystudent.diary.view.main.ui.syllabus.NotificationsFragment"
+        android:label="@string/title_syllabus"
+        tools:layout="@layout/fragment_notifications" />
+</navigation>
