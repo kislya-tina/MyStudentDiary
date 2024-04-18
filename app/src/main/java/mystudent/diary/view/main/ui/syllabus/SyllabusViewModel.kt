@@ -1,13 +1,13 @@
-package mystudent.diary.view.main.ui.home
+package mystudent.diary.view.main.ui.syllabus
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-class DashboardViewModel : ViewModel() {
+class SyllabusViewModel : ViewModel() {
 
     private val _text = MutableLiveData<String>().apply {
-        value = "This is Home Fragment"
+        value = "This is Syllabus Fragment"
     }
     val text: LiveData<String> = _text
 }

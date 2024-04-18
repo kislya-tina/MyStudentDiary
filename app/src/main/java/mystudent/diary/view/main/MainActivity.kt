@@ -39,6 +39,7 @@ class MainActivity :
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+        navView.selectedItemId = R.id.navigation_home
     }
 
     override fun onClick(item: View?) {

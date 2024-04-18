@@ -7,19 +7,19 @@
 
     <fragment
         android:id="@+id/navigation_statistic"
-        android:name="mystudent.diary.view.main.ui.statistic.HomeFragment"
+        android:name="mystudent.diary.view.main.ui.statistic.StatisticFragment"
         android:label="@string/title_statistic"
         tools:layout="@layout/fragment_home" />
 
     <fragment
         android:id="@+id/navigation_home"
-        android:name="mystudent.diary.view.main.ui.home.DashboardFragment"
+        android:name="mystudent.diary.view.main.ui.home.HomeFragment"
         android:label="@string/title_home"
-        tools:layout="@layout/fragment_dashboard" />
+        tools:layout="@layout/fragment_statistic" />
 
     <fragment
         android:id="@+id/navigation_syllabus"
-        android:name="mystudent.diary.view.main.ui.syllabus.NotificationsFragment"
+        android:name="mystudent.diary.view.main.ui.syllabus.SyllabusFragment"
         android:label="@string/title_syllabus"
-        tools:layout="@layout/fragment_notifications" />
+        tools:layout="@layout/fragment_syllabus" />
 </navigation>
