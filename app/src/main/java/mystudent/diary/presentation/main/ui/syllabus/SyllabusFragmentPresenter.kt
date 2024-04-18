@@ -1,4 +1,4 @@
-package mystudent.diary.presentation.main.fragments
+package mystudent.diary.presentation.main.ui.syllabus
 
 import mystudent.diary.presentation.abstractions.IPresenter
 import mystudent.diary.view.abstractions.fragments.ISyllabusFragment

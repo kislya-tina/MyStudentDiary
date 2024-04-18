@@ -1,4 +1,4 @@
 package mystudent.diary.view.abstractions.fragments
 
-interface IMainFragment {
+interface IHomeFragment {
 }

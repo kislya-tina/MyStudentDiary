@@ -3,19 +3,19 @@ package mystudent.diary.view.main.ui.syllabus
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
+import android.view.View.OnClickListener
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import mystudent.diary.databinding.FragmentSyllabusBinding
+import mystudent.diary.presentation.main.ui.syllabus.SyllabusFragmentPresenter
+import mystudent.diary.view.abstractions.fragments.ISyllabusFragment
 
-class SyllabusFragment : Fragment() {
-
-    private var _binding: FragmentSyllabusBinding? = null
-
-    // This property is only valid between onCreateView and
-    // onDestroyView.
-    private val binding get() = _binding!!
+class SyllabusFragment :
+    Fragment(),
+    ISyllabusFragment,
+    OnClickListener{
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -35,8 +35,21 @@ class SyllabusFragment : Fragment() {
         return root
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        presenter.onViewCreated(this)
+    }
+
+    override fun onClick(p0: View?) {
+        TODO("Not yet implemented")
+    }
+
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
     }
+
+    private var _binding: FragmentSyllabusBinding? = null
+    private val binding get() = _binding!!
+    private val presenter = SyllabusFragmentPresenter()
 }
