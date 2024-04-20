@@ -2,6 +2,7 @@ package mystudent.diary.view.main
 
 import android.os.Bundle
 import android.view.View
+import android.view.Window
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
@@ -37,7 +38,6 @@ class MainActivity :
                 R.id.navigation_statistic, R.id.navigation_home, R.id.navigation_syllabus
             )
         )
-        setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
         navView.selectedItemId = R.id.navigation_home
     }
