@@ -7,12 +7,12 @@
     <string name="main">main</string>
     <string name="syll">syll</string>
     <string name="title_activity_bottom_nav">bottomNav</string>
-    <string name="title_home">Home</string>
+    <string name="title_home">Расписание</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
     <string name="title_activity_main">MainActivity</string>
-    <string name="title_statistic">Statistic</string>
-    <string name="title_syllabus">Syllabus</string>
+    <string name="title_statistic">Статистика</string>
+    <string name="title_syllabus">Учебный план</string>
     <string-array name="month">
                 <item>Январь</item>
                 <item>Февраль</item>
