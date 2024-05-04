@@ -9,4 +9,7 @@
     <color name="white">#FFFFFFFF</color>
     <color name="nav_bar_color">#FF199790</color>
     <color name="status_bar_color">#FFDAD3CB</color>
+    <color name="primary_text_color">#434343</color>
+    <color name="item_list_color">#A8A8A8</color>
+    <color name="top_menu_color">#DAD3CB</color>
 </resources>

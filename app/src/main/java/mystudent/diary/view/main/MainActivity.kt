@@ -4,6 +4,7 @@ import android.graphics.Color
 import android.os.Bundle
 import android.view.View
 import android.view.Window
+import android.widget.Spinner
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
@@ -14,6 +15,7 @@ import mystudent.diary.R
 import mystudent.diary.databinding.ActivityMainBinding
 import mystudent.diary.presentation.main.MainActivityPresenter
 import mystudent.diary.view.abstractions.IMainActivity
+import java.util.Calendar
 
 class MainActivity :
     AppCompatActivity(),
@@ -24,23 +26,17 @@ class MainActivity :
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
+//        прячем верхний бар
         supportActionBar?.hide()
+//        установка нижнего бара
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
         val navView: BottomNavigationView = binding.navView
-
         val navController = findNavController(R.id.nav_host_fragment_activity_main)
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
-        val appBarConfiguration = AppBarConfiguration(
-            setOf(
-                R.id.navigation_statistic, R.id.navigation_home, R.id.navigation_syllabus
-            )
-        )
         navView.setupWithNavController(navController)
         navView.selectedItemId = R.id.navigation_home
+
+
     }
 
     override fun onClick(item: View?) {

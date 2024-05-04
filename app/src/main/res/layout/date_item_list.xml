@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="45dp"
+    android:layout_height="50dp"
+    android:layout_margin="5dp"
+    android:orientation="vertical"
+    android:background="@drawable/item_list_rectangle"
+    >
+
+    <TextView
+        android:id="@+id/day"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="чт"
+        android:layout_gravity="center"
+        android:textSize="15sp"
+        android:fontFamily="@font/open_sans_bold"/>
+
+    <TextView
+        android:id="@+id/week"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="31"
+        android:layout_gravity="center"
+        android:textSize="20sp"
+        android:fontFamily="@font/open_sans_bold"/>
+
+</androidx.appcompat.widget.LinearLayoutCompat>
