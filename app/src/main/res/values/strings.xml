@@ -13,6 +13,9 @@
     <string name="title_activity_main">MainActivity</string>
     <string name="title_statistic">Статистика</string>
     <string name="title_syllabus">Учебный план</string>
+    <string name="plus">+</string>
+    <string name="add_task">Добавить задачу</string>
+    <string name="add_lesson">Добавить занятие</string>
     <string-array name="month">
                 <item>Январь</item>
                 <item>Февраль</item>

@@ -22,4 +22,6 @@ class DateListViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
     private var date: TextView? = null
     private var weekName: TextView? = null
+    private var onItemClick: ((LocalDate, Int) -> Unit)? = null
+//    private var selectedItem =
 }

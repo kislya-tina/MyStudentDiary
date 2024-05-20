@@ -2,11 +2,15 @@ package mystudent.diary.view.main
 
 import android.graphics.Color
 import android.os.Bundle
+import android.view.MenuItem
 import android.view.View
 import android.view.Window
+import android.widget.PopupMenu
 import android.widget.Spinner
+import android.widget.Toast
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.AppCompatButton
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
@@ -36,7 +40,10 @@ class MainActivity :
         navView.setupWithNavController(navController)
         navView.selectedItemId = R.id.navigation_home
 
-
+        plusButton = findViewById(R.id.plusButton)
+        plusButton?.setOnClickListener {
+            showPopup(plusButton)
+        }
     }
 
     override fun onClick(item: View?) {
@@ -48,5 +55,23 @@ class MainActivity :
         presenter.onDestroy()
     }
 
+    private fun showPopup(view: View?) {
+        val popup = PopupMenu(view?.context, view)
+        popup.inflate(R.menu.popupmenu)
+        popup.setOnMenuItemClickListener(PopupMenu.OnMenuItemClickListener { item: MenuItem? ->
+            when (item!!.itemId) {
+                R.id.task -> {
+                    Toast.makeText(this, "Задача добавлена", Toast.LENGTH_SHORT).show()
+                }
+                R.id.lesson -> {
+                    Toast.makeText(this, "Занятие добавлено", Toast.LENGTH_SHORT).show()
+                }
+            }
+            return@OnMenuItemClickListener true
+        })
+        popup.show()
+    }
+
     private val presenter = MainActivityPresenter()
+    private var plusButton : AppCompatButton? = null
 }

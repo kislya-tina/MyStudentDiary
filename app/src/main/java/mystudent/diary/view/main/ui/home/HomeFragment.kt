@@ -1,6 +1,5 @@
 package mystudent.diary.view.main.ui.home
 
-import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -55,21 +54,22 @@ class HomeFragment :
         presenter.onViewCreated(this)
 
         this.spinner = view.findViewById(R.id.spinner)
-        rcView = view.findViewById<RecyclerView?>(R.id.date_list).apply {
+        recyclerView = view.findViewById<RecyclerView?>(R.id.date_list).apply {
             adapter = this@HomeFragment.adapter
         }
-        rcView?.layoutManager = LinearLayoutManager(this.requireActivity(), LinearLayoutManager.HORIZONTAL, false)
+        recyclerView?.layoutManager = LinearLayoutManager(this.requireActivity(), LinearLayoutManager.HORIZONTAL, false)
 
         val formatter = DateTimeFormatter.ofPattern("MM")
         val current = LocalDateTime.now().format(formatter)
 
         spinner?.setSelection(current.toInt()-1)
-
+        presenter.onSelectItem(0)
+        recyclerView?.findViewHolderForAdapterPosition(1)
     }
 
 
     override fun onClick(p0: View?) {
-        TODO("Not yet implemented")
+
     }
 
     override fun onDestroy() {
@@ -80,8 +80,9 @@ class HomeFragment :
     private var _binding: FragmentHomeBinding? = null //
     private val binding get() = _binding!!
     private val presenter = HomeFragmentPresenter()
-
     private var spinner: Spinner? = null
-    private var rcView: RecyclerView? = null
+
+    private var recyclerView: RecyclerView? = null
     private var adapter = DateListAdapter()
+
 }

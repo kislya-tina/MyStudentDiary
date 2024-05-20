@@ -12,5 +12,12 @@ class HomeFragmentPresenter : IPresenter<IHomeFragment> {
         this.view = null
     }
 
+    fun onSelectItem(selected: Int){
+        selectedItem = selected
+    }
+    fun selectedItem():Int{
+        return selectedItem
+    }
     private var view : IHomeFragment? = null
+    private var selectedItem = -1
 }
