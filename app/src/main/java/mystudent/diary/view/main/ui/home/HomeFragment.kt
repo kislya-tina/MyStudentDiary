@@ -15,6 +15,7 @@ import mystudent.diary.R
 import mystudent.diary.databinding.FragmentHomeBinding
 import mystudent.diary.presentation.main.ui.home.HomeFragmentPresenter
 import mystudent.diary.view.abstractions.fragments.IHomeFragment
+import mystudent.diary.view.main.MainActivity
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 
@@ -65,6 +66,10 @@ class HomeFragment :
         spinner?.setSelection(current.toInt()-1)
         presenter.onSelectItem(0)
         recyclerView?.findViewHolderForAdapterPosition(1)
+
+        activity?.let {
+            (it as MainActivity).buttonVisibility(true)
+        }
     }
 
 

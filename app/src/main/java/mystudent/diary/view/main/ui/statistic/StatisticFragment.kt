@@ -11,6 +11,7 @@ import androidx.lifecycle.ViewModelProvider
 import mystudent.diary.databinding.FragmentStatisticBinding
 import mystudent.diary.presentation.main.ui.statistic.StatisticFragmentPresenter
 import mystudent.diary.view.abstractions.fragments.IStatisticFragment
+import mystudent.diary.view.main.MainActivity
 
 class StatisticFragment :
     Fragment(),
@@ -38,6 +39,9 @@ class StatisticFragment :
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         presenter.onViewCreated(this)
+        activity?.let {
+            (it as MainActivity).buttonVisibility(false)
+        }
     }
 
     override fun onClick(p0: View?) {

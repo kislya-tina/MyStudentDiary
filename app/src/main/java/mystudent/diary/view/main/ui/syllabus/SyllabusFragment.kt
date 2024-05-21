@@ -11,6 +11,7 @@ import androidx.lifecycle.ViewModelProvider
 import mystudent.diary.databinding.FragmentSyllabusBinding
 import mystudent.diary.presentation.main.ui.syllabus.SyllabusFragmentPresenter
 import mystudent.diary.view.abstractions.fragments.ISyllabusFragment
+import mystudent.diary.view.main.MainActivity
 
 class SyllabusFragment :
     Fragment(),
@@ -38,6 +39,9 @@ class SyllabusFragment :
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         presenter.onViewCreated(this)
+        activity?.let {
+            (it as MainActivity).buttonVisibility(false)
+        }
     }
 
     override fun onClick(p0: View?) {

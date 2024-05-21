@@ -1,6 +1,7 @@
 package mystudent.diary.view.main
 
 import android.graphics.Color
+import android.opengl.Visibility
 import android.os.Bundle
 import android.view.MenuItem
 import android.view.View
@@ -44,6 +45,7 @@ class MainActivity :
         plusButton?.setOnClickListener {
             showPopup(plusButton)
         }
+
     }
 
     override fun onClick(item: View?) {
@@ -53,6 +55,14 @@ class MainActivity :
     override fun onDestroy() {
         super.onDestroy()
         presenter.onDestroy()
+    }
+
+    fun buttonVisibility(boolean: Boolean){
+        if(boolean){
+            plusButton?.visibility = View.VISIBLE
+        }else{
+            plusButton?.visibility = View.GONE
+        }
     }
 
     private fun showPopup(view: View?) {
