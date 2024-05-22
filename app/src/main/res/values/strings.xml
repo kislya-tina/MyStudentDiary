@@ -16,18 +16,20 @@
     <string name="plus">+</string>
     <string name="add_task">Добавить задачу</string>
     <string name="add_lesson">Добавить занятие</string>
+    <string name="syllabus">   Учебный план</string>
+    <string name="this_is_subject_activity">This is Subject Activity</string>
     <string-array name="month">
-                <item>Январь</item>
-                <item>Февраль</item>
-                <item>Март</item>
-                <item>Апрель</item>
-                <item>Май</item>
-                <item>Июнь</item>
-                <item>Июль</item>
-                <item>Август</item>
-                <item>Сентябрь</item>
-                <item>Октябрь</item>
-                <item>Ноябрь</item>
-                <item>Декабрь</item>
+        <item>Январь</item>
+        <item>Февраль</item>
+        <item>Март</item>
+        <item>Апрель</item>
+        <item>Май</item>
+        <item>Июнь</item>
+        <item>Июль</item>
+        <item>Август</item>
+        <item>Сентябрь</item>
+        <item>Октябрь</item>
+        <item>Ноябрь</item>
+        <item>Декабрь</item>
     </string-array>
 </resources>

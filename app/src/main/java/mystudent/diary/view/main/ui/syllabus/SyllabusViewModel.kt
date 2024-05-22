@@ -7,7 +7,7 @@ import androidx.lifecycle.ViewModel
 class SyllabusViewModel : ViewModel() {
 
     private val _text = MutableLiveData<String>().apply {
-        value = "This is Syllabus Fragment"
+        value = ""
     }
     val text: LiveData<String> = _text
 }

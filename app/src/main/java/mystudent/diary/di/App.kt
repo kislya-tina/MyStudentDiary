@@ -1,14 +1,15 @@
 package mystudent.diary.di
 
 import android.app.Application
+import mystudent.diary.model.services.SubjectsService
 
 class App : Application() {
     override fun onCreate() {
         super.onCreate()
-//        service = Service()
+        syllabusService = SubjectsService()
     }
 
     companion object{
-//        lateinit var service : IService
+        var syllabusService = SubjectsService()
     }
 }
