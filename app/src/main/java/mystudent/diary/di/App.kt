@@ -6,10 +6,10 @@ import mystudent.diary.model.services.SubjectsService
 class App : Application() {
     override fun onCreate() {
         super.onCreate()
-        syllabusService = SubjectsService()
+        subjectsService = SubjectsService()
     }
 
     companion object{
-        var syllabusService = SubjectsService()
+        var subjectsService = SubjectsService()
     }
 }

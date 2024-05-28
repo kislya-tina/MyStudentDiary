@@ -8,16 +8,20 @@ import android.view.View
 import android.view.View.OnClickListener
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.appcompat.widget.AppCompatButton
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import mystudent.diary.R
 import mystudent.diary.databinding.FragmentSyllabusBinding
+import mystudent.diary.view.main.dialogs.syllabus.subject.DeleteDialog
 import mystudent.diary.presentation.main.ui.syllabus.SyllabusFragmentPresenter
 import mystudent.diary.view.abstractions.fragments.ISyllabusFragment
 import mystudent.diary.view.main.MainActivity
+import mystudent.diary.view.main.dialogs.syllabus.AddDialog
 import mystudent.diary.view.main.ui.syllabus.recyclerview.SubjectsAdapter
+import mystudent.diary.view.main.ui.syllabus.subject.SubjectActivity
 
 
 class SyllabusFragment :
@@ -32,15 +36,12 @@ class SyllabusFragment :
     ): View {
         val syllabusViewModel =
             ViewModelProvider(this)[SyllabusViewModel::class.java]
-
         _binding = FragmentSyllabusBinding.inflate(inflater, container, false)
         val root: View = binding.root
-
         val textView: TextView = binding.textSyllabus
         syllabusViewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
         }
-
         return root
     }
 
@@ -56,15 +57,15 @@ class SyllabusFragment :
         recyclerView.layoutManager = layoutManager
         recyclerView.adapter = subjectsAdapter
 
-
-//        recyclerView.findViewById<RecyclerView>(R.id.recyclerViewSubjects)?.apply{
-//            adapter = this@SyllabusFragment.subjectsAdapter
-//        }
-//        recyclerView.layoutManager = LinearLayoutManager(activity)
+        addButton = view.findViewById(R.id.addButton)
+        addButton.setOnClickListener(this)
     }
 
     override fun onClick(p0: View?) {
-        TODO("Not yet implemented")
+        if(p0 == addButton){
+            presenter.onAddButtonClick()
+            notifyDataChanged()
+        }
     }
 
     override fun startSubjectActivity(){
@@ -77,6 +78,15 @@ class SyllabusFragment :
         subjectsAdapter.notifyDataSetChanged()
     }
 
+    override fun onResume() {
+        super.onResume()
+        notifyDataChanged()
+    }
+
+    override fun showAddDialog(){
+        activity?.let { dialog.show(it.supportFragmentManager, "") }
+    }
+
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
@@ -87,4 +97,6 @@ class SyllabusFragment :
     private val presenter = SyllabusFragmentPresenter()
     private lateinit var recyclerView: RecyclerView
     private val subjectsAdapter = SubjectsAdapter(presenter)
+    private lateinit var addButton: AppCompatButton
+    private val dialog = AddDialog(presenter)
 }

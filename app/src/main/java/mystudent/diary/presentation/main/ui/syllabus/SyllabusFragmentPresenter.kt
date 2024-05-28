@@ -17,20 +17,35 @@ class SyllabusFragmentPresenter : IPresenter<ISyllabusFragment> {
     }
 
     fun onItemClick(position: Int){
-        currentClickedPosition = position
+        App.subjectsService.currentClickedSubject = position
         view?.startSubjectActivity()
+    }
+
+    fun onAddButtonClick(){
+        view?.showAddDialog()
+    }
+
+    fun onDialogAddButtonClick(subjectName : String, formOfControl: FormOfControl){
+        App.subjectsService.addSubject(
+            Subject(
+                subjectName,
+                formOfControl
+            )
+        )
+
     }
 
     override fun onDestroy() {
         this.view = null
     }
 
-    val subjects = App.syllabusService.subjects
+    val subjects = App.subjectsService.subjects
 
     val subjectsCount: Int
         get() = subjects.size
 
     private var view: ISyllabusFragment? = null
-    private var currentClickedPosition = -10
+    private var currentClickedPosition = App.subjectsService.currentClickedSubject
+
 
 }

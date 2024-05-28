@@ -35,13 +35,6 @@ class HomeFragment :
 
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val root: View = binding.root
-
-//        val adapter = ArrayAdapter.createFromResource(
-//            activity as Context,
-//            R.array.month,
-//            android.R.layout.simple_spinner_item
-//        )
-
         val textView: TextView = binding.textHome
         homeViewModel.text.observe(viewLifecycleOwner) {
             textView.text = it

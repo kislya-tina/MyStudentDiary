@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:padding="10dp"
+    android:background="@drawable/dialog_rec"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/addTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:text="@string/addSubject"
+        android:textColor="@color/primary_text_color"
+        android:textSize="17sp"
+        android:gravity="center" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:text="@string/enterSubjectName"
+        android:textColor="@color/primary_text_color"
+        android:textSize="15sp"
+        android:gravity="start"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/subjectNameEditText"
+        android:inputType="text"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:text="@string/selectFormOfControl"
+        android:textColor="@color/primary_text_color"
+        android:textSize="15sp"
+        android:gravity="start"/>
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/formOfControlSpinner"
+        android:entries="@array/form_of_control"
+        android:outlineSpotShadowColor="@color/black"/>
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/cancelButton"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:backgroundTint="@color/nav_bar_color"
+            android:text="@string/cancel"
+            android:textAllCaps="false"
+            android:textColor="@color/white"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/addButton"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:backgroundTint="@color/nav_bar_color"
+            android:textColor="@color/white"
+            android:text="@string/add"
+            android:textAllCaps="false"/>
+    </LinearLayout>
+</LinearLayout>
