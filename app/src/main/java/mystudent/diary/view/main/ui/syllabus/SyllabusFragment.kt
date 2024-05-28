@@ -15,7 +15,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import mystudent.diary.R
 import mystudent.diary.databinding.FragmentSyllabusBinding
-import mystudent.diary.view.main.dialogs.syllabus.subject.DeleteDialog
 import mystudent.diary.presentation.main.ui.syllabus.SyllabusFragmentPresenter
 import mystudent.diary.view.abstractions.fragments.ISyllabusFragment
 import mystudent.diary.view.main.MainActivity

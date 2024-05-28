@@ -9,8 +9,6 @@ import android.widget.EditText
 import android.widget.Spinner
 import androidx.appcompat.widget.AppCompatButton
 import androidx.fragment.app.DialogFragment
-import androidx.lifecycle.lifecycleScope
-import kotlinx.coroutines.launch
 import mystudent.diary.R
 import mystudent.diary.model.main.objects.FormOfControl
 import mystudent.diary.presentation.main.ui.syllabus.SyllabusFragmentPresenter

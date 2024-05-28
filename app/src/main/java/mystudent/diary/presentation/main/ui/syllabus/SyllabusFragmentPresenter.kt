@@ -45,7 +45,6 @@ class SyllabusFragmentPresenter : IPresenter<ISyllabusFragment> {
         get() = subjects.size
 
     private var view: ISyllabusFragment? = null
-    private var currentClickedPosition = App.subjectsService.currentClickedSubject
 
 
 }
