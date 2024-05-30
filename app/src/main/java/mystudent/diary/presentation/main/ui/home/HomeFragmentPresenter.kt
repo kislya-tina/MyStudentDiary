@@ -1,5 +1,6 @@
 package mystudent.diary.presentation.main.ui.home
 
+import mystudent.diary.di.App
 import mystudent.diary.presentation.abstractions.IPresenter
 import mystudent.diary.view.abstractions.fragments.IHomeFragment
 
@@ -18,6 +19,16 @@ class HomeFragmentPresenter : IPresenter<IHomeFragment> {
     fun selectedItem():Int{
         return selectedItem
     }
+
+    fun onBindViewItem(){
+
+    }
+
+    val exercises = App.subjectsService.exercises
+    val exercisesCount: Int
+        get() = exercises.size
+
+
     private var view : IHomeFragment? = null
     private var selectedItem = -1
 }

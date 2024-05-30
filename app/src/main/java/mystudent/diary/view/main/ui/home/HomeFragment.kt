@@ -16,6 +16,8 @@ import mystudent.diary.databinding.FragmentHomeBinding
 import mystudent.diary.presentation.main.ui.home.HomeFragmentPresenter
 import mystudent.diary.view.abstractions.fragments.IHomeFragment
 import mystudent.diary.view.main.MainActivity
+import mystudent.diary.view.main.ui.home.dates.DateListAdapter
+import mystudent.diary.view.main.ui.home.exercises.ExerciseAdapter
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 
@@ -63,6 +65,11 @@ class HomeFragment :
         activity?.let {
             (it as MainActivity).buttonVisibility(true)
         }
+
+        val layoutManager = LinearLayoutManager(context)
+        exRecyclerView = view.findViewById(R.id.exerciseRecyclerView)
+        exRecyclerView.layoutManager = layoutManager
+        exRecyclerView.adapter = exAdapter
     }
 
 
@@ -83,4 +90,6 @@ class HomeFragment :
     private var recyclerView: RecyclerView? = null
     private var adapter = DateListAdapter()
 
+    private lateinit var exRecyclerView: RecyclerView
+    private var exAdapter = ExerciseAdapter(presenter)
 }

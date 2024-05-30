@@ -25,6 +25,9 @@
     <string name="add">Добавить</string>
     <string name="enterSubjectName">Введите название предмета</string>
     <string name="selectFormOfControl">Выберите вид аттестации:</string>
+    <string name="subject_name">Название предмета</string>
+    <string name="place">Аудитория</string>
+    <string name="_8_45_n_n10_20">8:45 \n - \n10:20</string>
     <string-array name="month">
         <item>Январь</item>
         <item>Февраль</item>
