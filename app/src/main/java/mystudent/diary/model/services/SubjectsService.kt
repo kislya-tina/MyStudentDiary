@@ -18,6 +18,18 @@ class SubjectsService {
         subjects.removeAt(i)
     }
 
+    fun getExercise(i: Int): Exercise{
+        return exercises[i]
+    }
+
+    fun addExercise(exer: Exercise){
+        exercises.add(exer)
+    }
+
+    fun deleteExercise(i : Int){
+        exercises.removeAt(i)
+    }
+
     var subjects = arrayListOf(
         Subject("Базы Данных", FormOfControl.Credit),
         Subject("Тестирование", FormOfControl.Credit),

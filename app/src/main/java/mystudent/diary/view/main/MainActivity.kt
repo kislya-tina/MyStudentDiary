@@ -1,5 +1,6 @@
 package mystudent.diary.view.main
 
+import android.annotation.SuppressLint
 import android.graphics.Color
 import android.opengl.Visibility
 import android.os.Bundle
@@ -20,6 +21,8 @@ import mystudent.diary.R
 import mystudent.diary.databinding.ActivityMainBinding
 import mystudent.diary.presentation.main.MainActivityPresenter
 import mystudent.diary.view.abstractions.IMainActivity
+import mystudent.diary.view.main.dialogs.home.AddExerciseDialog
+import mystudent.diary.view.main.ui.home.HomeFragment
 import java.util.Calendar
 
 class MainActivity :
@@ -31,6 +34,7 @@ class MainActivity :
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        presenter.onViewCreated(this)
 //        прячем верхний бар
         supportActionBar?.hide()
 //        установка нижнего бара
@@ -52,9 +56,8 @@ class MainActivity :
 
     }
 
-    override fun onDestroy() {
-        super.onDestroy()
-        presenter.onDestroy()
+    override fun showAddExerciseDialog() {
+        dialog.show(supportFragmentManager, "")
     }
 
     fun buttonVisibility(boolean: Boolean){
@@ -71,7 +74,7 @@ class MainActivity :
         popup.setOnMenuItemClickListener(PopupMenu.OnMenuItemClickListener { item: MenuItem? ->
             when (item!!.itemId) {
                 R.id.task -> {
-                    Toast.makeText(this, "Задача добавлена", Toast.LENGTH_SHORT).show()
+                    presenter.onAddExerciseButtonClick()
                 }
                 R.id.lesson -> {
                     Toast.makeText(this, "Занятие добавлено", Toast.LENGTH_SHORT).show()
@@ -82,6 +85,12 @@ class MainActivity :
         popup.show()
     }
 
+    override fun onDestroy() {
+        super.onDestroy()
+        presenter.onDestroy()
+    }
+
     private val presenter = MainActivityPresenter()
+    private var dialog = AddExerciseDialog(presenter)
     private var plusButton : AppCompatButton? = null
 }
